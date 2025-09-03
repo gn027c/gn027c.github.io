@@ -1,0 +1,27 @@
+{
+  "name": "Nguyễn Tấn Lợi - Developer & Content Creator",
+  "short_name": "TL-Aboutme",
+  "description": "Trang cá nhân của Nguyễn Tấn Lợi - Developer, Coder và Content Creator",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1d31",
+  "theme_color": "#4324b3",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["personal", "technology", "education"],
+  "lang": "vi",
+  "dir": "ltr"
+}
