@@ -61,6 +61,12 @@ html {
 }
 
 /* ---------------------- WEBSITE ---------------------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 html {
     line-height: 1.5;
     scrollbar-width: none;
@@ -69,8 +75,6 @@ html {
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
-    min-height: 100vh;
-    min-height: calc(var(--vh, 1vh) * 100);
     display: flex;
     justify-content: center;
     align-items: center;
