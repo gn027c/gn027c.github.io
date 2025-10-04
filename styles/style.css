@@ -68,7 +68,10 @@ html {
 /* ---------------------- WEBSITE ---------------------- */
 html, body {
     margin: 0;
-    padding: 0;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
     height: 100%;
 }
 
@@ -81,11 +84,130 @@ body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
     color: var(--text-primary);
-    padding: 1rem;
+    /* padding: 1rem; */
 }
+
+@media (max-width: 576px) {
+    body {
+        display: block;
+        min-height: 100vh;
+        /* padding: 0; */
+    }
+    .container {
+        margin: 0.5rem 0.25rem;
+        padding: 0.75rem 0.5rem;
+        padding-top: max(0.5rem, env(safe-area-inset-top));
+        padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+        padding-left: max(0.25rem, env(safe-area-inset-left));
+        padding-right: max(0.25rem, env(safe-area-inset-right));
+    }
+    .profile-card {
+        margin-bottom: 0.5rem;
+        margin-top: 6rem;
+        padding: 0.75rem 0.5rem;
+        padding-top: max(0.75rem, env(safe-area-inset-top));
+        padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+        padding-left: max(0.5rem, env(safe-area-inset-left));
+        padding-right: max(0.5rem, env(safe-area-inset-right));
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .container {
+        margin: 1.5rem 1rem;
+        padding: 1.25rem 1rem;
+        padding-top: max(1rem, env(safe-area-inset-top));
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 22rem;
+    }
+    .profile-card {
+        margin-bottom: 1rem;
+        margin-top: 7rem;
+        padding: 1.25rem 1rem;
+        padding-top: max(1rem, env(safe-area-inset-top));
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .container {
+        margin: 2rem 1rem;
+        padding: 2rem 1.5rem;
+        padding-top: max(1.5rem, env(safe-area-inset-top));
+        padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 32rem;
+    }
+    .profile-card {
+        margin-bottom: 2rem;
+        margin-top: 8rem;
+        padding: 2rem 1.5rem;
+        padding-top: max(1.5rem, env(safe-area-inset-top));
+        padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+    }
+}
+
+@media (min-width: 1025px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .container {
+        margin: 2rem 1rem;
+        padding: 2rem 1.5rem;
+        padding-top: max(1.5rem, env(safe-area-inset-top));
+        padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 38rem;
+    }
+    .profile-card {
+        margin-bottom: 2rem;
+        margin-top: 8rem;
+        padding: 2rem 1.5rem;
+        padding-top: max(1.5rem, env(safe-area-inset-top));
+        padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+    }
+}
+
+/* Xóa các padding-top tạm thời từng thêm để fix che khuất */
 
 /* ---------------------- BACKGROUND ---------------------- */
 .context {
@@ -105,8 +227,8 @@ body {
     z-index: -1;
     background: radial-gradient(ellipse at bottom, #223340 0%, #161644 100%);
     background: -webkit-radial-gradient(ellipse at bottom, #471584 0%, #610c41 100%);
-    inset: 0;
     position: fixed;
+    inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     overflow: hidden;
     animation: colorPulse 15s ease infinite;
 }
@@ -240,6 +362,12 @@ body {
     width: 100%;
     max-width: 28rem;
     margin: 2rem 1rem;
+    padding-top: max(1.5rem, env(safe-area-inset-top));
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Profile Card */
@@ -268,6 +396,10 @@ body {
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
     padding: 1.5rem;
+    padding-top: max(1.5rem, env(safe-area-inset-top));
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -281,7 +413,7 @@ body {
 
 .banner-wrapper {
     position: absolute;
-    inset: 0;
+    inset: env(safe-area-inset-top) env(safe-area-inset-right) auto env(safe-area-inset-left);
     height: 200px;
     overflow: hidden;
     border-radius: 12px 12px 0 0;
@@ -1015,11 +1147,37 @@ header p {
     transform: translateY(0);
 }
 
+/* Chỉnh sửa kích thước cho device */
+
+/* Desktop (≥ 1025px) */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 38rem;
+    }
+}
+
+/* Tablet lớn (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 34rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .social-grid {
+        gap: 0.75rem;
+        margin: 2rem 0.5rem;
+    }
+
+    .social-link, .payment-button {
+        font-size: 0.95rem;
+    }
+}
+
 /* Tablet nhỏ (577px – 768px) */
 @media (min-width: 577px) and (max-width: 768px) {
     .container {
-        max-width: 80%; /* thoáng hơn một chút */
-        margin: 1.5rem auto;
+        max-width: 30rem;
     }
 
     .social-grid {
@@ -1082,3 +1240,6 @@ header p {
         margin: 1rem
     }
 }
+
+
+
