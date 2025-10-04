@@ -353,4 +353,36 @@ document.addEventListener('DOMContentLoaded', () => {
     dynamicTitle = new DynamicTitle(CONFIG.profile.names, CONFIG.profile.title);
 });
 
+// Particle background animation
+(function() {
+  const NUM_PARTICLES = 32;
+  const COLORS = [
+    'rgba(255,255,255,0.15)',
+    'rgba(102,126,234,0.18)',
+    'rgba(120,75,162,0.13)',
+    'rgba(240,147,251,0.12)'
+  ];
+  const area = document.querySelector('.area');
+  if (!area) return;
+  let particleBg = document.querySelector('.particle-bg');
+  if (!particleBg) {
+    particleBg = document.createElement('div');
+    particleBg.className = 'particle-bg';
+    area.appendChild(particleBg);
+  }
+  for (let i = 0; i < NUM_PARTICLES; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 18 + 8;
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    p.style.left = `${Math.random() * 100}%`;
+    p.style.bottom = `-${size + Math.random()*40}px`;
+    p.style.background = COLORS[Math.floor(Math.random()*COLORS.length)];
+    p.style.animationDuration = `${Math.random()*8+7}s`;
+    p.style.animationDelay = `${Math.random()*8}s`;
+    particleBg.appendChild(p);
+  }
+})();
+
 
