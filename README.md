@@ -1,22 +1,19 @@
-# TL-Aboutme - Personal Profile Website
+# TL-Profile - Personal Profile Website
 
-Trang cá nhân chuyên nghiệp của **Nguyễn Tấn Lợi** (IshiiAinari / gn027c) - Developer, Coder và Content Creator.
+Trang cá nhân chuyên nghiệp, dùng để giới thiệu cơ bản về hoạt động và các liên kết để trò chuyện với **Nguyễn Tấn Lợi**.
 
 ## ✨ Tính Năng Nổi Bật
 
-- 🎨 **Giao diện hiện đại** với thiết kế glassmorphism và gradient đẹp mắt
 - 🎵 **Nhạc nền** với điều khiển âm lượng tương tác
-- 📄 **CV Preview** - Xem trước CV trực tiếp trên trang web với iframe
 - 💳 **Thông tin thanh toán** với QR code và copy-on-click
 - 🔗 **Social Links** bao gồm Discord, Facebook, YouTube, GitHub, Valorant, Roblox
 - ✨ **Dynamic Title** với hiệu ứng typing mượt mà
 - 📱 **Responsive Design** tối ưu cho mọi thiết bị
-- 🚀 **PWA Support** - Có thể cài đặt như ứng dụng
 
 ## 🏗️ Cấu Trúc Dự Án
 
 ```
-TL-Aboutme/
+./
 │── .gitignore
 │── README.md
 │── index.html              # Trang chính
@@ -24,7 +21,6 @@ TL-Aboutme/
 │── /assets/                # Chứa tài nguyên
 │   ├── /images/            # Hình ảnh (avatar, banner, favicon, QR codes)
 │   ├── /audio/             # File nhạc
-│   └── cv.pdf              # File CV
 │── /styles/                # CSS
 │   └── style.css
 │── /scripts/               # JavaScript
@@ -33,11 +29,6 @@ TL-Aboutme/
 ```
 
 ## 🎯 Tính Năng Chi Tiết
-
-### CV Preview System
-- **Xem trước PDF**: Hiển thị CV trực tiếp trên trang web qua iframe
-- **Tải xuống**: Nút download riêng biệt với visual feedback
-- **Responsive**: Tối ưu hiển thị trên mọi kích thước màn hình
 
 ### Dynamic Title
 - **Typing Effect**: Hiệu ứng đánh máy mượt mà như Gunlol/Zio profile
@@ -60,7 +51,6 @@ TL-Aboutme/
 - **CSS3** - Glassmorphism, gradients, animations
 - **JavaScript ES6+** - Dynamic content và interactions
 - **Font Awesome** - Icons cho social links
-- **PWA** - Progressive Web App support
 
 ## 📱 Responsive Design
 
@@ -68,62 +58,6 @@ Website được tối ưu cho:
 - 📱 **Mobile** (320px - 768px)
 - 📱 **Tablet** (768px - 1024px)
 - 💻 **Desktop** (1024px+)
-
-## 🚀 Cách Sử Dụng
-
-1. **Clone repository**:
-   ```bash
-   git clone https://github.com/IshiiAinari/profile.git
-   cd profile
-   ```
-
-2. **Chỉnh sửa cấu hình** trong `scripts/config.js`:
-   - Thông tin cá nhân
-   - Social links
-   - Payment details
-   - Media paths
-
-3. **Deploy** lên GitHub Pages hoặc hosting khác
-
-## ⚙️ Cấu Hình
-
-Tất cả nội dung động được quản lý trong `scripts/config.js`:
-
-```javascript
-window.__SITE_CONFIG__ = {
-    profile: {
-        title: "About Me",
-        names: ["gn027c", "AinariIshii", "Nguyễn Tấn Lợi"],
-        displayName: "Nguyễn Tấn Lợi",
-        // ... more config
-    },
-    social: {
-        discordUser: "https://discord.com/users/...",
-        valorant: "https://tracker.gg/valorant/profile/...",
-        roblox: "https://www.roblox.com/users/...",
-        // ... more social links
-    },
-    // ... more sections
-};
-```
-
-## 🎨 Customization
-
-### Màu sắc và Theme
-Sử dụng CSS Custom Properties trong `styles/style.css`:
-```css
-:root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --accent-color: #f093fb;
-    /* ... more variables */
-}
-```
-
-### Animations
-- **Loading Screen**: ASCII art với API integration
-- **Hover Effects**: Smooth transitions cho tất cả elements
-- **Typing Effects**: Dynamic title và subtitle
 
 ## 📄 License
 
